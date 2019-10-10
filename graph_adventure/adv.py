@@ -1,7 +1,7 @@
 from room import Room
 from player import Player
 from world import World
-
+from util import Stack, Queue
 import random
 
 # Load world
@@ -19,9 +19,19 @@ world.loadGraph(elkcity)
 world.printRooms()
 player = Player("Name", world.startingRoom)
 
+## need to find the path
+## have player.currentRoom.id = currRoomID
+## iterate through visited and have currRoomID the iteration?
+## visited[currRoomID] = {}
+## have player.currentRoom.getExits() = exits
+## loop for direction of exits
+## def Travel to travel in the direction loop?
+#You may find the commands `player.currentRoom.id`, `player.currentRoom.getExits()` and `player.travel(direction)` useful.
+
 
 # FILL THIS IN
-traversalPath = ['n', 's']
+traversalPath = [] #we are supposed to go to every room for our little adventure
+visited ={}
 
 
 # TRAVERSAL TEST
