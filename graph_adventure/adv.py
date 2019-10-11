@@ -56,6 +56,37 @@ def find_move(previous= None):
         #check opposite directions
         # then travel and append that direction to our traversal path
 
+    for direction in exits:
+        if direction == 'n' and previous != direction:
+            Travel('n')
+            traversalPath.append('n')
+            find_move('s')
+            traversalPath.append('s')
+
+        elif direction == 's' and previous != direction:
+            Travel('s')
+            traversalPath.append('s')
+            find_move('n')
+            traversalPath.append('n')
+
+        elif direction == 'e' and previous != direction:
+            Travel('e')
+            traversalPath.append('e')
+            find_move('w')
+            traversalPath.append('w')
+
+        elif direction == 'w' and previous != direction:
+            Travel('w')
+            traversalPath.append('w')
+            find_move('e')
+            traversalPath.append('e')
+
+def Travel(direction):
+    print(f"Direction: {direction}")
+    player.travel(direction)
+
+
+
 
 
 
