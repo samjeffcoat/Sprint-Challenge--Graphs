@@ -20,9 +20,9 @@ world.printRooms()
 player = Player("Name", world.startingRoom)
 
 ## need to find the path
-## have player.currentRoom.id = currRoomID
-## iterate through visited and have currRoomID the iteration?
-## visited[currRoomID] = {}
+## have player.currentRoom.id = curRoomID
+## iterate through visited and have curRoomID the iteration?
+## visited[curRoomID] = {}
 ## have player.currentRoom.getExits() = exits
 ## loop for direction of exits
 ## def Travel to travel in the direction loop?
@@ -32,6 +32,32 @@ player = Player("Name", world.startingRoom)
 # FILL THIS IN
 traversalPath = [] #we are supposed to go to every room for our little adventure
 visited ={}
+
+
+
+def find_move(previous= None):
+    curRoomID= player.currentRoom.id
+
+    for i in visited:
+        if i == curRoomID:
+            print(f"Already found that room")
+            return
+    visited[curRoomID]= {}
+
+    exits = player.currentRoom.getExits()
+
+    #we are using find move to see if we can go to the next room or not
+
+    #go through n, s, e, w exits to find direction path
+        #if direction is north and previous is not direction
+        #call travel to go 'n'
+        #do same for other directiosn
+        #append n to our traversal path
+        #check opposite directions
+        # then travel and append that direction to our traversal path
+
+
+
 
 
 # TRAVERSAL TEST
